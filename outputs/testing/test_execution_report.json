@@ -1,0 +1,84 @@
+{
+  "status": "VERIFIED",
+  "summary": {
+    "total_tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "pass_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "test_generated::test_register_a_new_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_activate_an_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_suspend_an_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_close_an_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_deposit_into_an_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_withdraw_from_an_account",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_transfer_between_accounts",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_handle_invalid_account_type_during_registration",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_handle_account_registration_for_underage_customers",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    },
+    {
+      "test_name": "test_generated::test_handle_negative_opening_balance_during_registration",
+      "classname": "test_generated",
+      "outcome": "passed",
+      "message": "",
+      "stderr": ""
+    }
+  ],
+  "feedback": null
+}

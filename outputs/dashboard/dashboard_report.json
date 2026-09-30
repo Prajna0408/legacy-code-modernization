@@ -1,0 +1,27 @@
+{
+  "run_id": "parser-to-dashboard-agentic-test",
+  "generated_at": "2026-09-04T11:22:09.733171+00:00",
+  "documentation_quality_gate": {
+    "final_status": "APPROVED",
+    "final_score": 100.0,
+    "threshold": 85.0,
+    "retries_used": 1,
+    "max_retries": 2,
+    "areas_requiring_manual_review": []
+  },
+  "testing_quality_gate": {
+    "final_status": "VERIFIED",
+    "summary": {
+      "total_tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "pass_rate": 100.0
+    },
+    "retries_used": 0,
+    "max_retries": 2,
+    "areas_requiring_manual_review": []
+  },
+  "overall_pipeline_status": "VERIFIED"
+}

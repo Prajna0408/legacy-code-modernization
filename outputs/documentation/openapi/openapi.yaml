@@ -1,0 +1,222 @@
+openapi: 3.0.3
+info:
+  title: Account Lifecycle Management API
+  version: 1.0.0
+paths:
+  /registerAccount:
+    post:
+      summary: Register a new account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                age:
+                  type: integer
+                type:
+                  type: string
+                  enum:
+                  - STANDARD
+                  - PREMIUM
+                  - STUDENT
+                opening:
+                  type: number
+                  format: decimal
+                  minimum: 0
+              required:
+              - id
+              - name
+              - age
+              - type
+              - opening
+      responses:
+        '200':
+          description: Account successfully registered
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid input data, such as invalid account type, underage
+            customer, or negative opening balance
+        '500':
+          description: Internal server error
+  /activateAccount:
+    post:
+      summary: Activate an account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+              required:
+              - id
+      responses:
+        '200':
+          description: Account successfully activated
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid account ID
+        '500':
+          description: Internal server error
+  /suspendAccount:
+    post:
+      summary: Suspend an account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                reason:
+                  type: string
+              required:
+              - id
+              - reason
+      responses:
+        '200':
+          description: Account successfully suspended
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid input data
+        '500':
+          description: Internal server error
+  /closeAccount:
+    post:
+      summary: Close an account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+              required:
+              - id
+      responses:
+        '200':
+          description: Account successfully closed
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid account ID
+        '500':
+          description: Internal server error
+  /deposit:
+    post:
+      summary: Deposit into an account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                amount:
+                  type: number
+                  format: decimal
+                  minimum: 0.01
+                  maximum: 100000.0
+              required:
+              - id
+              - amount
+      responses:
+        '200':
+          description: Deposit successful
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid input data or deposit amount exceeds limit
+        '500':
+          description: Internal server error
+  /withdraw:
+    post:
+      summary: Withdraw from an account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                amount:
+                  type: number
+                  format: decimal
+                  minimum: 0.01
+              required:
+              - id
+              - amount
+      responses:
+        '200':
+          description: Withdrawal successful
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid input data or insufficient balance
+        '500':
+          description: Internal server error
+  /transfer:
+    post:
+      summary: Transfer between accounts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sourceId:
+                  type: string
+                destinationId:
+                  type: string
+                amount:
+                  type: number
+                  format: decimal
+                  minimum: 1.0
+                  maximum: 5000.0
+              required:
+              - sourceId
+              - destinationId
+              - amount
+      responses:
+        '200':
+          description: Transfer successful
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid input data or transfer amount out of bounds
+        '500':
+          description: Internal server error
